@@ -24,3 +24,6 @@ Let’s run a container and mount the created volume to the root:
 $ docker run -it -v my-volume:/data --name my-container selaworkshops/busybox:latest
 
 Creating Volume Mount from docker run command & sharing same Volume Mounts among multiple containers
+
+
+
