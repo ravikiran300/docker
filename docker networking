@@ -1,0 +1,33 @@
+https://kodekloud.com/networking-docker-containers/
+
+
+Let us first understand the three types of networks available in docker: “bridge”, “none” and “host”.
+
+A bridge is the default network a container gets attached to.
+
+The bridge network is a private, internal network created by docker on the host. All containers attach to this network by default and they get an internal IP address. Usually in the range 170.17.x.x .
+
+To access any of these containers from outside-world, the docker bridge architecture maps ports of these containers to port on the docker host.
+
+===============
+
+host network
+This takes out any network isolation between the docker host and the docker containers.
+For example, if you were to run a web server on port 5000 in a web-app container attached to the host network, it is automatically accessible on the same port externally, without requiring to publish the port using the -p option.
+
+drawback: 
+As a web container using the host’s network, it would mean that unlike before, you will now NOT be able to run multiple web containers on the same host and port, as these are now common to all containers in the host network.
+
+
+=============
+
+None network
+
+Host Network
+The third is the none network. The containers are not attached to any network and does not have access to the external network or other containers.
+It is isolated from all other networks.
+
+==============
+
+
+
