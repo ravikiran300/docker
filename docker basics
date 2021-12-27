@@ -1,0 +1,26 @@
+Creating Dockerfile
+docker build -t ajeetraina/alpine-git .
+docker tag ajeetraina/alpine-git ajeetraina/labs-git:v1.0
+docker images
+
+=================
+COPY takes in a src and destination. It only lets you copy in a local file or directory from your host (the machine building the Docker image) into the Docker image itself.
+
+ADD lets you do that too, but it also supports 2 other sources. First, you can use a URL instead of a local file / directory. Secondly, you can extract a tar file from the source directly into the destination.
+======================
+
+Volumes
+=======
+docker volume ls
+docker volume create demo
+docker inspect demo
+docker volume rm demo
+
+$ docker rm -f $(docker ps -a -q)
+$ docker volume rm $(docker volume ls -q)
+
+
+Let’s run a container and mount the created volume to the root:
+$ docker run -it -v my-volume:/data --name my-container selaworkshops/busybox:latest
+
+Creating Volume Mount from docker run command & sharing same Volume Mounts among multiple containers
