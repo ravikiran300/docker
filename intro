@@ -1,0 +1,14 @@
+Microservices:
+
+Rather than giving into single product to customer you are going to divide that product into smaller components
+spilliting into different components based on functionality 
+
+lifecycle automation(ci/cd)
+scalbilit(if we want to spin up_
+developer independence(if devloper want to devlop new instance)
+
+microservice solution using docker
+
+1)compose the application using docker
+2)break the application componenets into individual containers
+3)
