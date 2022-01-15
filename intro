@@ -11,4 +11,6 @@ microservice solution using docker
 
 1)compose the application using docker
 2)break the application componenets into individual containers
-3)
+3)store the changeable data as volumes in external volumes
+
+
