@@ -27,3 +27,74 @@ Creating Volume Mount from docker run command & sharing same Volume Mounts among
 
 
 
+
+============================
+============================
+
+container 
+docker search image
+docker pull thatimage
+
+docker image(whatever we want to install in docker it installs as layers) or artifact
+docker container is when run that docker image it becomes a container
+
+docker pull redis
+docker images
+docker ps
+
+stop and running container docker ps -a
+
+docker run -p6000:6379  --name ravikiran redis
+docker run -d -p60001:6379 redis
+
+if any issue if u want to stop and run container 
+
+docker stop containerid
+docker start containerid
+
+docker logs imagename
+
+docker exec -it
+
+=======
+
+bridge network - communication between containers . by default network in docker
+host- remove network isolation between host and containers we can use host network directly. it is in used docker swarm
+overlay network - mostly used in docker swarm. if u have  different docker daemon we want to connect it and communic with host
+none- disable network
+macvalan - it assign MAC address to container like its appears like a physcial device
+example: 
+host- -> enps(phys or virt)
+we need to connect to container(the container has bridge network) 172.17.01
+next whatever container we create it will create virtual ethernet
+
+whenever connect to outside world we can communicate
+if want to comes inside the container that won't work bcoz of NAT
+
+
+bridge" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
