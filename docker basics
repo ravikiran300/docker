@@ -72,7 +72,16 @@ whenever connect to outside world we can communicate
 if want to comes inside the container that won't work bcoz of NAT
 
 
-bridge" 
+using bridge network u can communicate outside world but u cannot communicate between containers bcoz there is no route
+
+example :
+run a container
+docker network inspect bridge
+inspect ip address created like default network, ip network 1 , ip network 2
+docker attach apline1
+
+if u dont want to exit directly ctr+pq
+
 
 
 
