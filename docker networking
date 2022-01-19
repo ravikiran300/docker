@@ -1,5 +1,7 @@
-https://kodekloud.com/networking-docker-containers/
+Resources  for docker networking learning: 
 
+https://kodekloud.com/networking-docker-containers/
+https://kodekloud.com/docker-certified-associate-exam-series-part-6-networking/
 
 Let us first understand the three types of networks available in docker: “bridge”, “none” and “host”.
 
