@@ -1,0 +1,16 @@
+storage : 
+
+host os ki  bind aa untai
+external strorge(persistant)
+tmpfs(for temporarry data
+we have some storage drivers
+
+
+COW(COPY ON WRITE)
+touch hello
+
+docker history finalimage   
+
+bind image
+
+docker run --rm -dit --name=bind1 --mount type=bind,source="$(pwd)"/bind1,target=/app nginx
