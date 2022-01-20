@@ -80,7 +80,24 @@ docker network inspect bridge
 inspect ip address created like default network, ip network 1 , ip network 2
 docker attach apline1
 
-if u dont want to exit directly ctr+pq
+if u dont want to exit directly ctr+pq(container will be detached mode)
+
+create bridge network
+
+docker run -dit --name apline1 --network alpine-net alpine
+
+run a container
+
+docker run -dit --name apline2 --network alpine-net alpine
+
+create 3 bridge and 1 default network(DEFULT IS FOR FUN)
+
+docker network connect bridge alpine4(apline4 container with bridge network)(now it will in defalut and bridge network)
+
+If WE CONNECT BRIDGE ALPINE4 WE CAN PING APLINE4 IN ANY OF THE APLINE1,2,3  
+
+
+
 
 
 
