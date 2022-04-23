@@ -27,7 +27,26 @@ o Intend port to publish.
 
  CMD
 o Setting default command for container. It can be overridden.
+setting default command in Dockerfile as CMD
 
+example:
+FROM centos
+CMD ["echo",Hello world"]
+docker build -t myimg
+docker run -it myimag /bin/bash
+its only print hello
+2)it can overridden by using /bin/sh (a shell will open with -it)
+
+==================================
  ENTRYPOINT
+ If you want pass an option to exisiting command you are going to use entrypoint
+ it will additonal argument to it. it can't overwritten by existing command
 o Specify executable inside the container. It does not get overridden.
 o However, it can be overridden by --entrypoint flag
+
+FROM centos
+ENTRYPOINT ["echo",Hello"]
+its only print hello 
+docker run -it myimag /bin/bash
+print echo hello world /bin/bash
+usecase: when you run application you don't want to user to override the default command
