@@ -34,6 +34,29 @@ FROM centos
 CMD ["echo",Hello world"]
 docker build -t myimg
 docker run -it myimag /bin/bash
+
+ ENV
+o Set environment variables.
+o Can be overridden by --env flag.
+o ENV [Key]=[Value]
+ USER
+o Set user.
+
+WORKDIR /home/ravikiran
+
+
+ HEALTHCHECK
+o Checks the health of a container by running a command inside the container.
+o Can be only one Healthcheck instruction in a Dockerfile.
+o Options for CMD:
+ --interval=DURATION (default: 30s)
+ --timeout=DURATION (default: 30s)
+ --start-period=DURATION (default: 0s)
+ --retries=N (default: 3)
+HEALTHCHECK --interval=5s CMD curl localhost:<port>
+
+ ARG
+o Declared before the FROM instruction
 its only print hello
 2)it can overridden by using /bin/sh (a shell will open with -it)
 
