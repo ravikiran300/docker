@@ -90,3 +90,19 @@ RUN \
   rm -rf /var/lib/apt/lists/*
   
   
+  ========================================
+  
+  docker --help | grep -E "(export|import|load|save)"
+  
+  2
+
+docker import is mostly used with a tarball that is created out of running container. 
+For Eg. docker export containerID > /home/cntr.tar then import this tarball to an image Eg. docker import /home/cntr.tar mynewimage:tag
+
+Whereas docker load is used to load the image from a tarball that is created from another image.
+For Eg. docker save > /home/fromimg.tar then load it back with docker load < /home/fromimg.tar
+
+the main difference though docker save/load with image does preserve the image history.
+Whereas docker export/import with container flattens the image by removing all the history of the container.
+  
+  
