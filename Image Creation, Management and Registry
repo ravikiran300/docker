@@ -104,5 +104,11 @@ For Eg. docker save > /home/fromimg.tar then load it back with docker load < /ho
 
 the main difference though docker save/load with image does preserve the image history.
 Whereas docker export/import with container flattens the image by removing all the history of the container.
+
+========================================
+
+Multi-stage builds allow you to drastically reduce the size of your final image, without struggling to reduce the number of intermediate layers and files.
+
+Because an image is built during the final stage of the build process, you can minimize image layers by leveraging build cache.
   
   
