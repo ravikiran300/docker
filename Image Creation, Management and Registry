@@ -35,6 +35,10 @@ CMD ["echo",Hello world"]
 docker build -t myimg
 docker run -it myimag /bin/bash
 
+Bridge networks are usually used when your applications run in standalone containers that need to communicate.
+
+Overlay networks connect multiple Docker daemons together and enable swarm services to communicate with each other
+
  ENV
 o Set environment variables.
 o Can be overridden by --env flag.
