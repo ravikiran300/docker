@@ -5,6 +5,50 @@ Docker applications. With Compose, you use a YAML file to configure your applica
  1) Define your app’s environment using a Dockerfile. This way, it can be reproduced.
 2)  Define the services for your app in a docker-compose.yml file. This way, they can run in an isolated environment.
 3)  Run docker-compose to start your app.
+==============
+
+services:
+  web:
+    build: angular
+    ports:
+      - 4200:4200
+    volumes:
+      - ./angular:/project
+      - /project/node_modules
+      
+================================
+
+services:
+  db:
+    # We use a mariadb image which supports both amd64 & arm64 architecture
+    image: mariadb:10.6.4-focal
+    # If you really want to use MySQL, uncomment the following line
+    #image: mysql:8.0.27
+    command: '--default-authentication-plugin=mysql_native_password'
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=somewordpress
+      - MYSQL_DATABASE=wordpress
+      - MYSQL_USER=wordpress
+      - MYSQL_PASSWORD=wordpress
+    expose:
+      - 3306
+      - 33060
+  wordpress:
+    image: wordpress:latest
+    ports:
+      - 80:80
+    restart: always
+    environment:
+      - WORDPRESS_DB_HOST=db
+      - WORDPRESS_DB_USER=wordpress
+      - WORDPRESS_DB_PASSWORD=wordpress
+      - WORDPRESS_DB_NAME=wordpress
+volumes:
+  db_data:
+
 
 version: '3'
 services:
