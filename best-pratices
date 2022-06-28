@@ -1,5 +1,9 @@
 https://github.com/nickjj/docker-node-example/blob/main/docker-compose.yml
 
+Multi-stage Docker builds let you write Dockerfiles with multiple FROM statements.
+
+Multi-stage builds allow you to drastically reduce the size of your final image, without struggling to reduce the number of intermediate layers and files.
+
 https://nickjanetakis.com/blog/best-practices-around-production-ready-web-apps-with-docker-compose
 
 x-app: &default-app
